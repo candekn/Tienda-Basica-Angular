@@ -1,0 +1,33 @@
+{
+	"users":
+		[
+			{
+				"firstname": "Elka",
+				"lastname": "Carleen",
+				"email": "Elka.Carleen@gmail.com",
+				"password": "Abc123",
+				"birthday": "10-01-1977"
+			},
+			{
+				"firstname": "Tersina",
+				"lastname": "Peti",
+				"email": "Tersina.Peti@gmail.com",
+				"password": "Abc123",
+				"birthday": "16-05-1907"
+			},
+			{
+				"firstname": "Tami",
+				"lastname": "Sesel",
+				"email": "Tami.Sesel@gmail.com",
+				"password": "Abc123",
+				"birthday": "06-02-2072"
+			},
+			{
+				"firstname": "Robbi",
+				"lastname": "Amethist",
+				"email": "Robbi.Amethist@gmail.com",
+				"password": "Abc123",
+				"birthday": "08-04-1990"
+			}
+		]
+}

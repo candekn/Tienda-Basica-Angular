@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+.bg-img{
+    background-image: url('../src/assets/img/background_1.svg');
+    background-repeat: space;
+    background-size: cover;
+}
+
+.btn-primary{
+    background-color: #d723c5 !important;
+    border-color: #a91a9a !important;
+}
+
+.formsize{
+    min-width: 500px;
+}

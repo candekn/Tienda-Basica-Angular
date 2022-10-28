@@ -1,0 +1,33 @@
+<div class="container d-flex justify-content-center mt-5">
+        <form [formGroup]="userLogin" class="mx-lg-3 py-lg-3 bg-light formsize" (ngSubmit)="onSubmit()">
+            <h2 class="h2 text-center mb-5">Login</h2>
+            <div class="row mb-3 d-flex justify-content-center">
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-6">
+                    <input type="email" class="form-control" id="email" formControlName="email" required>
+                </div>
+                <div *ngIf="submitted && formValidator['email'].errors">
+                    <div class="invalid-feedback ms-5" [ngClass]="{ 'd-block': formValidator['email'].errors['required'] }">
+                        Email required!
+                    </div>
+                    <div class="invalid-feedback ms-5" [ngClass]="{ 'd-block': formValidator['email'].errors['pattern'] }">
+                        Email format invalid!
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3 d-flex justify-content-center">
+                <label for="password" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-6">
+                    <input type="password" class="form-control" id="password" formControlName="password" autocomplete="off" required>
+                </div>
+                <div *ngIf="submitted && formValidator['password'].errors?.['required']">
+                    <div class="invalid-feedback ms-5 d-block" >Password required!</div>
+                </div>
+            </div>
+            <div role="group" class="d-flex justify-content-center my-2">
+                <!-- <button type="submit" class="btn btn-primary mx-2" [disabled]="!userLogin.valid">Sign in</button> -->
+                <button type="submit" class="btn btn-primary mx-2" >Sign in</button>
+                <button type="reset" class="btn btn-primary mx-2" (click)="submitted = false" >Cancel</button>
+            </div>
+        </form>
+</div>

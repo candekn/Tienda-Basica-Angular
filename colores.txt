@@ -1,0 +1,2 @@
+rosa: #d723c5
+verde: #02cf17
