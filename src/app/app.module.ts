@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { ProductsComponent } from './products/products.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule
