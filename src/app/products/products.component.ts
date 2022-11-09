@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-
+  rangePrice: number = 0;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  changePriceValue(value: string){
+    this.rangePrice = parseInt(value);
   }
 
 }

@@ -1,1 +1,41 @@
-<p>products works!</p>
+<app-header></app-header>
+<div class="container-fluid w-75 bg-light">
+
+    <div class="row g-0">
+        <div class="col-md-0 col-lg-4">
+            <div class="container p-5">
+                <label>Categories:</label>
+                <ul class="list-unstyled ms-2">
+                    <li>Lorem Ipsum 1</li>
+                    <li>Lorem Ipsum 2</li>
+                    <li>Lorem Ipsum 3</li>
+                    <li>Lorem Ipsum 4</li>
+                    <li>Lorem Ipsum 5</li>
+                </ul>
+                <label class="form-label">Price range:</label>
+                <input #price type="range" class="form-range ms-2" 
+                data-bs-toggle="tooltip" data-bs-placement="bottom" title={{rangePrice}} 
+                min="0" max="10" step="1" 
+                (change)="changePriceValue(price.value)">
+                <p>{{rangePrice}}</p>
+            </div>
+
+        </div>
+        <div class="col-md-12 col-lg-8">
+            <div class="card m-3 p-2">
+                <div class="row">
+                    <div class="col-5 col-sm-4">
+                        <img src="https://flowersandfancies.imgix.net/images/itemVariation/EndlessSunflowersMedium-220421110614.jpg"
+                            class="img-fluid w-75" alt="card-horizontal-image">
+                    </div>
+                    <div class="col-7 col-sm-8">
+                        <div class="card-body">
+                            <h2 class="card-title">PRODUCT NAME</h2>
+                            <h4 class="mb-auto">$5800</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

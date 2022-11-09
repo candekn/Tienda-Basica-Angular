@@ -9,8 +9,19 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  async getUserByEmailAndPassword(email: string, password: string){
-    return this.http.get<User[]>('../assets/jsondata/users.json')
-    .pipe(map(u => u.filter(u => u.email == email && u.password == password))); 
+  getUserByEmailAndPassword(email: string, password: string){
+    // this.http.get<any>('../assets/jsondata/users.json').subscribe((res) => {
+    //   const userList: User[] = res.users;
+    //   const user = userList.find(r => r.email == email && r.password == password)
+    //   return user;      
+    // })
+    return new Promise<User | undefined>((resolve) => {
+      this.http.get<any>('../assets/jsondata/users.json').subscribe((res) => {
+        const userList: User[] = res.users;
+        const user = userList.find(r => r.email == email && r.password == password);
+        resolve(user)     
+      })
+    })
+
   }
 }

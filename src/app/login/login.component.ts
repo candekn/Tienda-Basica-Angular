@@ -28,15 +28,20 @@ export class LoginComponent implements OnInit {
     return this.userLogin.controls;
   }
 
-  onSubmit(): void{
+  async onSubmit(){
     this.submitted = true;
-    console.log("🚀 ~ file: login.component.ts ~ line 34 ~ LoginComponent ~ onSubmit ~ this.userLogin", this.userLogin)
     if(!this.userLogin.valid){
       return
     }
-    //this.userService.getUserByEmailAndPassword(this.userLogin.value)
-
-    this.router.navigate(['products'])
+    const user = await this.userService.getUserByEmailAndPassword(this.userLogin.value.email, this.userLogin.value.password);
+    if(user){
+      localStorage.setItem('user', JSON.stringify({
+        firstname: user.firstname,
+        lastname: user.lastname,
+        email: user.email
+      }));
+      this.router.navigate(['products'])
+    }
   }
 
 
